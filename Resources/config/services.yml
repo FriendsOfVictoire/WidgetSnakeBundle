@@ -1,0 +1,4 @@
+services:
+#    victoire_widget_snake.example:
+#        class: Victoire\Widget\SnakeBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
