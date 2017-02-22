@@ -26,6 +26,7 @@ class WidgetSnake extends Widget
      */
     public function __construct()
     {
+        parent::__construct();
         $this->scales = new ArrayCollection();
     }
 

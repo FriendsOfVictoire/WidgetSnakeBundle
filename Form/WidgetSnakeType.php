@@ -23,7 +23,7 @@ class WidgetSnakeType extends WidgetType
         $namespace = $options['namespace'];
         $mode = $options['mode'];
 
-        $builder->add('events', CollectionType::class, array(
+        $builder->add('scales', CollectionType::class, array(
             'type' => new ScaleType($businessEntityId, $namespace, $options['widget']),
             'allow_add' => true,
             'allow_delete' => true,

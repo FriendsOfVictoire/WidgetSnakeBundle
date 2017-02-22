@@ -11,6 +11,8 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Victoire\Bundle\CoreBundle\Form\EntityProxyFormType;
 use Victoire\Bundle\CoreBundle\Form\WidgetType;
+use Victoire\Bundle\FormBundle\Form\Type\LinkType;
+use Victoire\Bundle\MediaBundle\Form\Type\MediaType;
 
 /**
  * Class ScaleType
@@ -39,7 +41,19 @@ class ScaleType extends AbstractType
             $builder
                 ->add('title', TextType::class, [
                     'label' => 'widget_listing.form.listing_item.title.label'
-                ]);
+                ])
+                ->add('description', 'textarea', array(
+                    'label' => 'widget_timeline_event.form.description.label',
+                    'required' => false,
+                ))
+                ->add('image', MediaType::class, array(
+                    'label' => 'widget_timeline_event.form.image.label',
+                    'required' => false, ))
+                ->add('link', LinkType::class)
+                ->add('linkLabel', null, array(
+                    'label' => 'form.widget_timeline_event.linkLabel.label',
+                    'required' => false,
+                ));
 
             //add the remove button
             self::addRemoveButton($builder);
