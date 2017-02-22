@@ -49,11 +49,7 @@ class ScaleType extends AbstractType
                 ->add('image', MediaType::class, array(
                     'label' => 'widget_timeline_event.form.image.label',
                     'required' => false, ))
-                ->add('link', LinkType::class)
-                ->add('linkLabel', null, array(
-                    'label' => 'form.widget_timeline_event.linkLabel.label',
-                    'required' => false,
-                ));
+                ;
 
             //add the remove button
             self::addRemoveButton($builder);

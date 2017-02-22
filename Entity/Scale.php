@@ -15,8 +15,6 @@ use Victoire\Bundle\CoreBundle\Annotations as VIC;
  */
 class Scale
 {
-    use \Victoire\Bundle\WidgetBundle\Entity\Traits\LinkTrait;
-
     /**
      * @var int
      *
