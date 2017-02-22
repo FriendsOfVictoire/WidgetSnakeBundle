@@ -35,6 +35,7 @@ class WidgetSnake extends Widget
      */
     public function addScales(Scale $scale)
     {
+        $scale->setSnake($this);
         $this->scales->add($scale);
         return $this;
     }

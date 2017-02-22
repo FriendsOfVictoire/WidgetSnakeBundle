@@ -1,4 +1,8 @@
 services:
-#    victoire_widget_snake.example:
-#        class: Victoire\Widget\SnakeBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    victoire.widget.snake:
+        class: Victoire\Widget\SnakeBundle\Entity\WidgetSnake
+
+    victoire.widget.form.snake:
+        class: Victoire\Widget\SnakeBundle\Form\WidgetSnakeType
+        tags:
+            - { name: form.type, alias: victoire_widget_form_snake }
