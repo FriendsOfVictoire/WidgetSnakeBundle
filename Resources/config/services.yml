@@ -1,4 +1,9 @@
 services:
+    victoire_core.widget_snake_content_resolver:
+        class: Victoire\Widget\SnakeBundle\Resolver\WidgetSnakeContentResolver
+        tags:
+            - { name: victoire_widget.widget_content_resolver, alias: Snake }
+
     victoire.widget.snake:
         class: Victoire\Widget\SnakeBundle\Entity\WidgetSnake
 

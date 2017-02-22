@@ -34,7 +34,7 @@ class WidgetSnake extends Widget
      * @param Scale $scale
      * @return $this
      */
-    public function addScales(Scale $scale)
+    public function addScale(Scale $scale)
     {
         $scale->setSnake($this);
         $this->scales->add($scale);
@@ -57,15 +57,5 @@ class WidgetSnake extends Widget
     public function getScales()
     {
         return $this->scales;
-    }
-
-    /**
-     * @param ArrayCollection $scales
-     * @return WidgetSnake
-     */
-    public function setScales($scales)
-    {
-        $this->scales = $scales;
-        return $this;
     }
 }

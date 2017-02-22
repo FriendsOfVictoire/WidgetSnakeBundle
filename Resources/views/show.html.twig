@@ -1,0 +1,21 @@
+{% extends 'VictoireCoreBundle:Widget:show.html.twig' %}
+
+{% block content %}
+    <div>
+        <ol>
+            {% for scale in widget.scales %}
+                <li>
+                    <div>
+                        {% if null != scale.image %}
+                            <div>
+                                <img src="{{ asset(scale.image.url) }}"/>
+                            </div>
+                        {% endif %}
+                        <h4>{{ scale.title }}</h4>
+                        <p>{{ scale.description }}</p>
+                    </div>
+                </li>
+            {% endfor %}
+        </ol>
+    </div>
+{% endblock %}

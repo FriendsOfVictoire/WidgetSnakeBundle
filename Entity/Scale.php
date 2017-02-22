@@ -67,6 +67,11 @@ class Scale
     private $linkLabel;
 
     /**
+     * @ORM\Column(name="position", type="integer")
+     */
+    protected $position = 0;
+
+    /**
      * @return int
      */
     public function getId()
@@ -161,6 +166,24 @@ class Scale
     public function setLinkLabel($linkLabel)
     {
         $this->linkLabel = $linkLabel;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    /**
+     * @param mixed $position
+     * @return Scale
+     */
+    public function setPosition($position)
+    {
+        $this->position = $position;
         return $this;
     }
 }
