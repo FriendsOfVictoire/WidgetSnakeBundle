@@ -6,6 +6,26 @@
             <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
         </header>
         <body>
+            <trans-unit id="snake-widget-designation-fr" resname="widget.snake.new.action.label">
+                <source>widget.snake.new.action.label</source>
+                <target>Snake</target>
+            </trans-unit>
+            <trans-unit id="snake-widget-title-fr" resname="widget_listing.form.listing_item.title.label">
+                <source>widget_listing.form.listing_item.title.label</source>
+                <target>Title</target>
+            </trans-unit>
+            <trans-unit id="snake-widget-description-fr" resname="widget_timeline_event.form.description.label">
+                <source>widget_timeline_event.form.description.label</source>
+                <target>Description</target>
+            </trans-unit>
+            <trans-unit id="snake-widget-image-fr" resname="widget_timeline_event.form.image.label">
+                <source>widget_timeline_event.form.image.label</source>
+                <target>Image</target>
+            </trans-unit>
+            <trans-unit id="snake-widget-delete-fr" resname="widget.form.WidgetListingItemType.removeButton.label">
+                <source>widget.form.WidgetListingItemType.removeButton.label</source>
+                <target>Delete</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
