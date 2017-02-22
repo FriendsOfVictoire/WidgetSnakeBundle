@@ -1,0 +1,11 @@
+victoire_core:
+    widgets:
+        Snake:
+            class: "Victoire\\Widget\\SnakeBundle\\Entity\\WidgetSnake"
+            name: Snake
+
+jms_translation:
+    configs:
+        victoire_snake_bundle:
+            dirs: ["@VictoireSnakeBundle"]
+            output_dir: "@VictoireSnakeBundle/Resources/translations"
