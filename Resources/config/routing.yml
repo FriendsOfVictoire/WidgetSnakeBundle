@@ -1,0 +1,3 @@
+victoire_widget_snake_homepage:
+    path:     /
+    defaults: { _controller: VictoireWidgetSnakeBundle:Default:index }
