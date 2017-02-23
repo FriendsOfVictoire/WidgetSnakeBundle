@@ -3,6 +3,7 @@ victoire_core:
         Snake:
             class: "Victoire\\Widget\\SnakeBundle\\Entity\\WidgetSnake"
             name: Snake
+            cache: false
 
 jms_translation:
     configs:
