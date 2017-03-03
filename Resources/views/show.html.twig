@@ -1,21 +1,29 @@
 {% extends 'VictoireCoreBundle:Widget:show.html.twig' %}
 
 {% block content %}
-    <div>
-        <ol>
-            {% for scale in scales %}
-                <li>
-                    <div>
-                        {% if null != scale.image %}
-                            <div>
-                                <img src="{{ asset(scale.image.url) }}"/>
-                            </div>
-                        {% endif %}
-                        <h4>{{ scale.title }}</h4>
-                        <p>{{ scale.description }}</p>
-                    </div>
+    <div class="scroll-serpentine">
+        <ol class="scroll-serpentine__content">
+            {% for item in items %}
+                {% if loop.index == 1 %}
+                    {% set progression = 4.7 %}
+                {% elseif loop.index == 2 %}
+                    {% set progression = 17.1 %}
+                {% elseif loop.index == 3 %}
+                    {% set progression = 61.1 %}
+                {% elseif loop.index == 4 %}
+                    {% set progression = 48.7 %}
+                {% elseif loop.index == 5 %}
+                    {% set progression = 92.1 %}
+                {% endif %}
+
+                <li class="scroll-serpentine__content-item" data-progression="{{ progression }}">
+                    {% include '@bricks/serpentine-content-' ~ itemType|default('iconned') ~ '.html.twig' with {"item": item} %}
                 </li>
             {% endfor %}
         </ol>
+
+        <svg class="scroll-serpentine__svg" xmlns="http://www.w3.org/2000/svg" width="945" height="528" viewBox="0 0 945 528">
+            <path class="scroll-serpentine__path" fill="none" stroke="{{ strokeColor|default('#e1e1e1')  }}" stroke-width="5" d="M166.6062 3h646.904s128.4946-.011 128.4946 124.3c0 101.6137-73.143 135.6547-128.4947 135.6547-10.8724 0-652.3576-1.2295-652.3576-1.2295S1.9917 253.2094 3.0048 391.7182c1.013 138.5088 158.1474 133.168 158.1474 133.168h322.2252" stroke-linecap="round"/>
+        </svg>
     </div>
 {% endblock %}

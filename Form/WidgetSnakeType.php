@@ -2,11 +2,14 @@
 
 namespace Victoire\Widget\SnakeBundle\Form;
 
+use Fenrizbes\ColorPickerTypeBundle\Form\Type\ColorPickerType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Victoire\Bundle\CoreBundle\Form\WidgetType;
+use Victoire\Widget\SnakeBundle\Entity\WidgetSnake;
 
 class WidgetSnakeType extends WidgetType
 {
@@ -23,7 +26,19 @@ class WidgetSnakeType extends WidgetType
         $namespace = $options['namespace'];
         $mode = $options['mode'];
 
-        $builder->add('scales', CollectionType::class, array(
+        $builder
+            ->add('type', ChoiceType::class, [
+                'label' => 'sake_type_label',
+                'placeholder' => 'snake_type_placeholder',
+                'choices' => [
+                    WidgetSnake::SNAKE_TYPE_SIMPLE,
+                    WidgetSnake::SNAKE_TYPE_ICONNED
+                ]
+            ])
+            ->add('spineColor', ColorPickerType::class, [
+                'label' => 'snake_spine_color_label'
+            ])
+            ->add('scales', CollectionType::class, array(
             'type' => new ScaleType($businessEntityId, $namespace, $options['widget']),
             'allow_add' => true,
             'allow_delete' => true,
