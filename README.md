@@ -17,7 +17,7 @@ Do not forget to add the bundle in your AppKernel !
         {
             $bundles = array(
                 ...
-                new Victoire\Widget\TimelineBundle\VictoireWidgetSnakeBundle(),
+                new Victoire\Widget\SnakeBundle\VictoireWidgetSnakeBundle(),
             );
 
             return $bundles;
